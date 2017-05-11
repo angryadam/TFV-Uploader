@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @recording.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recording.description %>
+</p>
+
+<p>
+  <strong>Recording:</strong>
+  <%= link_to 'Link to Recording', @recording.recording.url %>
+</p>
+
+<%= link_to 'Edit', edit_recording_path(@recording) %> |
+<%= link_to 'Back', recordings_path %>
