@@ -2,12 +2,13 @@
 
 <h1>Recordings</h1>
 
-<table>
+<table class="ui definition table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Recording</th>
+      <th>Date Uploaded</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +18,37 @@
       <tr>
         <td><%= recording.name %></td>
         <td><%= recording.description %></td>
-        <td><%= recording.recording %></td>
-        <td><%= link_to 'Show', recording %></td>
-        <td><%= link_to 'Edit', edit_recording_path(recording) %></td>
-        <td><%= link_to 'Destroy', recording, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="ui animated fade button" tabindex="0">
+          <div class="visible content">
+            <%= link_to recording.recording.file.filename, recording %>
+          </div>
+          <div class="hidden content">
+            <%= link_to 'Show', recording %>
+          </div>
+        </td>
+        <td><%= recording.created_at.strftime("%B %d, %Y") %></td>
+        <td>
+          <div class="ui animated fade button" tabindex="0">
+          <div class="visible content">
+            <%= link_to 'Edit', edit_recording_path(recording)  %>
+          </div>
+          <div class="hidden content">
+            <%= link_to edit_recording_path(recording) do %>
+              <i class="write icon"></i>
+            <% end %>
+          </div>
+        <td>
+          <div class="ui animated fade button" tabindex="0">
+          <div class="visible content">
+            <%= link_to 'Delete', recording, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          <div class="hidden content">
+            <%= link_to recording, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="red trash outline icon"></i>
+            <% end %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +56,11 @@
 
 <br>
 
-<%= link_to 'New Recording', new_recording_path %>
+<div class="ui animated button" tabindex="0">
+  <div class="visible content">
+    <%= link_to 'New Recording', new_recording_path %>
+  </div>
+  <div class="hidden content">
+    <i class="right arrow icon"></i>
+  </div>
+</div>
