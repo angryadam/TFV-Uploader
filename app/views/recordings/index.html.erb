@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Recordings</h1>
 
-<table class="ui definition table">
+<table class="ui celled padded table">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,35 +17,37 @@
         <td><%= recording.name %></td>
         <td><%= recording.description %></td>
         <td>
-          <div class="ui animated fade button" tabindex="0">
-          <div class="visible content">
-            <%= link_to recording.recording.file.filename, recording %>
-          </div>
-          <div class="hidden content">
-            <%= link_to 'Show', recording %>
-          </div>
+          <%= link_to recording do %>
+            <div class="ui animated fade button" tabindex="0">
+            <div class="visible content">
+              <%= recording.recording.file.filename %>
+            </div>
+            <div class="hidden content">
+              Show
+            </div>
+          <% end %>
         </td>
         <td><%= recording.created_at.strftime("%B %d, %Y") %></td>
         <td>
-          <div class="ui animated fade button" tabindex="0">
-          <div class="visible content">
-            <%= link_to 'Edit', edit_recording_path(recording)  %>
-          </div>
-          <div class="hidden content">
-            <%= link_to edit_recording_path(recording) do %>
-              <i class="write icon"></i>
-            <% end %>
-          </div>
+          <%= link_to edit_recording_path(recording) do %>
+            <div class="basic circular orange ui animated fade button" tabindex="0">
+            <div class="visible content">
+              Edit
+            </div>
+            <div class="hidden content">
+                <i class="write icon"></i>
+            </div>
+          <% end %>
         <td>
-          <div class="ui animated fade button" tabindex="0">
-          <div class="visible content">
-            <%= link_to 'Delete', recording, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-          <div class="hidden content">
-            <%= link_to recording, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <%= link_to recording, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <div class="basic circular ui animated fade button" tabindex="0">
+            <div class="visible content">
+              Delete
+            </div>
+            <div class="hidden content">
               <i class="red trash outline icon"></i>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -56,11 +56,13 @@
 
 <br>
 
-<div class="ui animated button" tabindex="0">
-  <div class="visible content">
-    <%= link_to 'New Recording', new_recording_path %>
-  </div>
-  <div class="hidden content">
-    <i class="right arrow icon"></i>
-  </div>
-</div>
+<%= link_to new_recording_path do %>
+  <div class="primary ui animated button" tabindex="0">
+    <div class="visible content">
+      New Recording
+    </div>
+    <div class="hidden content">
+        <i class="right arrow icon"></i>
+    </div>
+  </div
+<% end %>

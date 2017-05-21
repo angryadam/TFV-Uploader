@@ -1,5 +1,9 @@
 class RecordingUploader < CarrierWave::Uploader::Base
-  include CarrierWaveDirect::Uploader
+  if Rails.env.production?
+    include CarrierWaveDirect::Uploader
+  elsif Rails.env.development? || Rails.env.test?
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

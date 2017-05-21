@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: 5em;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -25,15 +25,20 @@ a {
   &:visited {
     color: #666;
   }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 th {
   padding-bottom: 5px;
+}
+
+.ui.table {
+  width: 75%;
+  margin: auto;
+}
+
+.ui.form {
+  width: 50%;
+  margin: auto;
 }
 
 td {

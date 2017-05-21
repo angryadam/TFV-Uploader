@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FileUploader</title>
+  <title>TFV-FileUploader</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<% if user_signed_in? %>
-Logged in as <strong><%= current_user.email %></strong>.
-<%= link_to 'Edit profile', edit_user_registration_path %> |
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% elsif User.count == 2 %>
-<%= link_to "Login", new_user_session_path %>
-<% end %>
+<div class='ui fixed inverted menu'>
+  <div class='ui container'>
+    <% if user_signed_in? %>
+    <div class='header item'>
+      <strong><%= current_user.email %></strong>.
+    </div>
+    <div class='item'>
+      <%= link_to 'Edit profile', edit_user_registration_path %>
+    </div>
+    <div class='item'>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+    <% elsif User.count == 2 %>
+    <%= link_to "Login", new_user_session_path %>
+    <% end %>
+  </div>
+</div>
 
 <body>
   <% if notice %>
