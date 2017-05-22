@@ -2,5 +2,24 @@
 
 <%= render 'form', recording: @recording %>
 
-<%= link_to 'Show', @recording %> |
-<%= link_to 'Back', recordings_path %>
+<%= link_to recordings_path do %>
+  <div class="ui secondary basic animated button" tabindex="0">
+    <div class="visible content">
+      Back
+    </div>
+    <div class="hidden content">
+        <i class="left arrow icon"></i>
+    </div>
+  </div
+<% end %>
+
+<%= link_to @recording do %>
+  <div class="ui secondary basic animated fade button" tabindex="0">
+    <div class="visible content">
+      Go To Recording
+    </div>
+    <div class="hidden content">
+        <i class="rocket icon"></i>
+    </div>
+  </div
+<% end %>

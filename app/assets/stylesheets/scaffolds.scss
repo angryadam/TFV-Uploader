@@ -5,6 +5,8 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-image: linear-gradient(60deg, rgba(111, 231, 255, 0.5) 5%, rgba(255, 177, 111, 0.35));
+  max-height: 75%;
 }
 
 p, ol, ul, td {
@@ -39,6 +41,10 @@ th {
 .ui.form {
   width: 50%;
   margin: auto;
+}
+
+.column {
+  max-width: 60em;
 }
 
 td {
@@ -86,4 +92,16 @@ div {
 
 label {
   display: block;
+}
+
+.right {
+  float: right;
+}
+
+.ui.table td.center {
+  text-align: center;
+}
+
+.ui.table thead th {
+  text-align: center;
 }

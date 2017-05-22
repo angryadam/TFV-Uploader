@@ -23,12 +23,12 @@
               <%= recording.recording.file.filename %>
             </div>
             <div class="hidden content">
-              Show
+              Go To Recording
             </div>
           <% end %>
         </td>
-        <td><%= recording.created_at.strftime("%B %d, %Y") %></td>
-        <td>
+        <td class="center"><%= recording.created_at.strftime("%B %d, %Y") %></td>
+        <td class="center">
           <%= link_to edit_recording_path(recording) do %>
             <div class="basic circular orange ui animated fade button" tabindex="0">
             <div class="visible content">
@@ -38,7 +38,7 @@
                 <i class="write icon"></i>
             </div>
           <% end %>
-        <td>
+        <td class="center">
           <%= link_to recording, method: :delete, data: { confirm: 'Are you sure?' } do %>
             <div class="basic circular ui animated fade button" tabindex="0">
             <div class="visible content">
