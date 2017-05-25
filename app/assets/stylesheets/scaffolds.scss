@@ -1,16 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Barrio|Titillium+Web");
+
+$standard-font: "Titillium Web", Helvetica, sans-serif;
+$header-font: "Barrio", Helvetica, sans-serif;
+
 body {
   background-color: #fff;
   color: #333;
-  margin: 5em;
-  font-family: verdana, arial, helvetica, sans-serif;
+  margin: 10em 5em 0 5em;
+  font-family: $standard-font;
   font-size: 13px;
   line-height: 18px;
   background-image: linear-gradient(60deg, rgba(111, 231, 255, 0.5) 5%, rgba(255, 177, 111, 0.35));
   max-height: 75%;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+h1, h2, h3, h4 {
+  font-family: $header-font;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p, ol, ul, td, .ui.header {
+  font-family: $standard-font;
   font-size: 13px;
   line-height: 18px;
 }
@@ -36,6 +49,33 @@ th {
 .ui.table {
   width: 75%;
   margin: auto;
+
+  td.center {
+    text-align: center;
+  }
+  thead th {
+    text-align: center;
+  }
+}
+
+.ui.button, .ui.menu {
+  font-family: $standard-font;
+  font-size: 1.3em;
+}
+
+.ui.celled.table tr th, .ui.celled.table tr td {
+  font-size: 1.3em;
+  .button {
+    font-size: .8em;
+  }
+}
+
+.ui.menu .ui.dropdown.item .menu .item {
+  color: black;
+}
+
+.ui.fixed.menu {
+  background-color: black;
 }
 
 .ui.form {
@@ -98,10 +138,6 @@ label {
   float: right;
 }
 
-.ui.table td.center {
-  text-align: center;
-}
-
-.ui.table thead th {
-  text-align: center;
+.bottom {
+  margin-top: 10em;
 }

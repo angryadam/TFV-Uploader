@@ -1,25 +1,27 @@
 <h1>Editing Recording</h1>
 
-<%= render 'form', recording: @recording %>
+<%= render 'edit_form', recording: @recording %>
 
-<%= link_to recordings_path do %>
-  <div class="ui secondary basic animated button" tabindex="0">
-    <div class="visible content">
-      Back
+<div class="bottom">
+  <%= link_to root_path do %>
+    <div class="ui secondary basic animated button" tabindex="0">
+      <div class="visible content">
+        Back
+      </div>
+      <div class="hidden content">
+          <i class="left arrow icon"></i>
+      </div>
     </div>
-    <div class="hidden content">
-        <i class="left arrow icon"></i>
-    </div>
-  </div
-<% end %>
+  <% end %>
 
-<%= link_to @recording do %>
-  <div class="ui secondary basic animated fade button" tabindex="0">
-    <div class="visible content">
-      Go To Recording
-    </div>
-    <div class="hidden content">
-        <i class="rocket icon"></i>
-    </div>
-  </div
-<% end %>
+  <%= link_to @recording do %>
+    <div class="ui secondary basic animated fade button" tabindex="0">
+      <div class="visible content">
+        Go To Recording
+      </div>
+      <div class="hidden content">
+          <i class="rocket icon"></i>
+      </div>
+    </div
+  <% end %>
+</div>

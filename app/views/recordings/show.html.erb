@@ -1,17 +1,49 @@
-<p>
-  <strong>Name:</strong>
-  <%= @recording.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recording.description %>
-</p>
+<div class="ui text container"
+  <div class="ui segments">
+    <div class="ui segment">
+      <h2>
+        <strong>Name:</strong>
+      </h2>
+      <%= @recording.name %>
+    </div>
+    <div class="ui segment">
+      <h2>
+        <strong>Description:</strong>
+      </h2>
+      <%= @recording.description %>
+    </div>
+    <div class="ui segment">
+      <h2>
+        <strong>Recording:</strong>
+      </h2>
+        <%= link_to @recording.recording.url do %>
+          <!-- <i class="diamond icon"></i> -->
+          Click here to watch/download
+        <% end %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Recording:</strong>
-  <%= link_to 'Link to Recording', @recording.recording.url %>
-</p>
+<div class='bottom'>
+  <%= link_to recordings_path do %>
+    <div class="ui secondary basic animated button" tabindex="0">
+      <div class="visible content">
+        Back
+      </div>
+      <div class="hidden content">
+          <i class="left arrow icon"></i>
+      </div>
+    </div>
+  <% end %>
 
-<%= link_to 'Edit', edit_recording_path(@recording) %> |
-<%= link_to 'Back', recordings_path %>
+  <%= link_to edit_recording_path(@recording) do %>
+    <div class="ui secondary basic animated button" tabindex="0">
+    <div class="visible content">
+      Edit
+    </div>
+    <div class="hidden content">
+        <i class="write icon"></i>
+    </div>
+  <% end %>
+</div>

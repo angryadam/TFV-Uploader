@@ -40,13 +40,15 @@
   <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 </div>
 
-<%= link_to recordings_path do %>
-  <div class="ui secondary basic animated button" tabindex="0">
-    <div class="visible content">
-      Back
-    </div>
-    <div class="hidden content">
-        <i class="left arrow icon"></i>
-    </div>
-  </div
-<% end %>
+<div class="bottom">
+  <%= link_to root_path do %>
+    <div class="ui secondary basic animated button" tabindex="0">
+      <div class="visible content">
+        Back
+      </div>
+      <div class="hidden content">
+          <i class="left arrow icon"></i>
+      </div>
+    </div
+  <% end %>
+</div>

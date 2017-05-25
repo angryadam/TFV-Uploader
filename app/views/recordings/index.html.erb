@@ -16,7 +16,7 @@
       <tr>
         <td><%= recording.name %></td>
         <td><%= recording.description %></td>
-        <td>
+        <td class="center">
           <%= link_to recording do %>
             <div class="ui animated fade button" tabindex="0">
             <div class="visible content">
@@ -56,13 +56,15 @@
 
 <br>
 
-<%= link_to new_recording_path do %>
-  <div class="primary ui animated button" tabindex="0">
-    <div class="visible content">
-      New Recording
-    </div>
-    <div class="hidden content">
+<div class="bottom">
+  <%= link_to new_recording_path do %>
+    <div class="primary ui animated button" tabindex="0">
+      <div class="visible content">
+        New Recording
+      </div>
+      <div class="hidden content">
         <i class="right arrow icon"></i>
-    </div>
-  </div
-<% end %>
+      </div>
+    </div
+  <% end %>
+</div>

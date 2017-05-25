@@ -1,19 +1,21 @@
 <div class="ui fixed inverted menu">
   <div class="ui container">
+    <div class="item">
+      <%= link_to 'Home', root_path %>
+    </div>
     <% if user_signed_in? %>
-      <div class="item">
-        <%= link_to 'Home', root_path %>
+    <div class="ui simple dropdown item">
+      <strong><%= current_user.email %></strong>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <%= link_to edit_user_registration_path do %>
+        <div class="item">Edit profile</div>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <div class="item">Logout</div>
+        <% end %>
       </div>
-      <div class="header item">
-        <strong><%= current_user.email %></strong>
-      </div>
-      <div class="item">
-        <%= link_to 'Edit profile', edit_user_registration_path %>
-      </div>
-      <div class="item">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      </div>
+    </div>
     <% end %>
   </div>
-
 </div>
